@@ -44,6 +44,10 @@ public class StatisticService implements IStatisticService {
     public StatsResponse getStatistic() {
         Long isMutant = repository.countByIsMutant(true);
         Long nonMutant = repository.countByIsMutant(false);
+
+        if (nonMutant == 0l)
+            return new StatsResponse(isMutant, nonMutant, 0.0);
+
         double ratio = ((double)isMutant) / nonMutant;
 
         return new StatsResponse(isMutant, nonMutant, ratio);
