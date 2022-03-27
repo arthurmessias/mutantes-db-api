@@ -21,7 +21,9 @@ mvn spring-boot:run
 ```
 
 ## Microservice endpoint
-Swagger UI http://localhost:8080/mutantes-db-api/swagger-ui.html
+* Local endpoint: http://localhost:8080
+* Heroku endpoint: https://mutantes-db-api.herokuapp.com
+* Swagger UI `/mutantes-db-api/swagger-ui.html`
 
 ### POST /statistic
 ```
@@ -68,4 +70,17 @@ http://localhost:8080/mutantes-db-api/stats?version=1
 	"count_human_dna":100: 
 	"ratio":0.4
 }
+```
+
+## MongoDB Atlas
+
+### Namespace
+* mutant_db
+
+### Collection
+* statistics
+
+### Document example
+```
+{"_id":"ATGCGACAGTGCTTATGTAGAAGGCCCCTATCACTG","isMutant":true,"_class":"com.mutantes.mutantesapi.model.Statistic"}
 ```
